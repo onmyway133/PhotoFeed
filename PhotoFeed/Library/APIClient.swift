@@ -1,6 +1,9 @@
 import Foundation
 import Alamofire
 
+typealias JSONDictionary = [String: Any]
+typealias JSONArray = [JSONDictionary]
+
 class APIClient {
   static let shared = APIClient()
 
@@ -26,15 +29,22 @@ class APIClient {
     return URL(string: "https://api.instagram.com/oauth/authorize/?client_id=\(clientId)&redirect_uri=\(redirectUri)&response_type=token")!
   }
 
-  func loadMedia() {
+  func loadMedia(completion: ([Media]) -> Void) {
     guard let accessToken = accessToken else {
       return
     }
 
-    request("https://api.instagram.com/v1/users/self",
+    request("https://api.instagram.com/v1/users/self/media/recent",
             parameters: ["access_token": accessToken])
-    .responseJSON { (response) in
-      print(response)
-    }
+    .responseData(completionHandler: { (response) in
+      if let data = response.result.value {
+        do {
+          let holder = try JSONDecoder().decode(DataHolder<Media>.self, from: data)
+          print(holder)
+        } catch {
+          print(error)
+        }
+      }
+    })
   }
 }

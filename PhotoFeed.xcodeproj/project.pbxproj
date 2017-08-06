@@ -23,6 +23,10 @@
 		D2A885C91F35CC0F0058171A /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A885C01F35CC0F0058171A /* ProfileController.swift */; };
 		D2A885CA1F35CC0F0058171A /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A885C11F35CC0F0058171A /* UserController.swift */; };
 		D2A885CC1F35CC5B0058171A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A885CB1F35CC5B0058171A /* APIClient.swift */; };
+		D2CDE3DA1F371C6E00B86B9A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CDE3D91F371C6E00B86B9A /* Image.swift */; };
+		D2CDE3DC1F371CAE00B86B9A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CDE3DB1F371CAE00B86B9A /* User.swift */; };
+		D2CDE3DE1F3751E700B86B9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CDE3DD1F3751E700B86B9A /* Extensions.swift */; };
+		D2CDE3E01F37563C00B86B9A /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CDE3DF1F37563C00B86B9A /* DataHolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		D2A885C01F35CC0F0058171A /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		D2A885C11F35CC0F0058171A /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		D2A885CB1F35CC5B0058171A /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D2CDE3D91F371C6E00B86B9A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D2CDE3DB1F371CAE00B86B9A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D2CDE3DD1F3751E700B86B9A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D2CDE3DF1F37563C00B86B9A /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
 		F79175BA34C7E461B469C604 /* Pods_PhotoFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				D27FC11B1F37069E0043D2AF /* Media.swift */,
+				D2CDE3D91F371C6E00B86B9A /* Image.swift */,
+				D2CDE3DB1F371CAE00B86B9A /* User.swift */,
+				D2CDE3DF1F37563C00B86B9A /* DataHolder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -146,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				D2A885CB1F35CC5B0058171A /* APIClient.swift */,
+				D2CDE3DD1F3751E700B86B9A /* Extensions.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -275,11 +287,15 @@
 				D2A885CA1F35CC0F0058171A /* UserController.swift in Sources */,
 				D2A885AA1F35CBB00058171A /* ViewController.swift in Sources */,
 				D2A885C51F35CC0F0058171A /* LoginController.swift in Sources */,
+				D2CDE3E01F37563C00B86B9A /* DataHolder.swift in Sources */,
 				D2A885CC1F35CC5B0058171A /* APIClient.swift in Sources */,
 				D27FC11A1F3706880043D2AF /* MediaCell.swift in Sources */,
 				D2A885C41F35CC0F0058171A /* FeedController.swift in Sources */,
+				D2CDE3DC1F371CAE00B86B9A /* User.swift in Sources */,
+				D2CDE3DA1F371C6E00B86B9A /* Image.swift in Sources */,
 				D2A885A81F35CBB00058171A /* AppDelegate.swift in Sources */,
 				D2A885C81F35CC0F0058171A /* PostController.swift in Sources */,
+				D2CDE3DE1F3751E700B86B9A /* Extensions.swift in Sources */,
 				D27FC11C1F37069E0043D2AF /* Media.swift in Sources */,
 				D2A885C71F35CC0F0058171A /* MenuController.swift in Sources */,
 				D2A885C61F35CC0F0058171A /* MainController.swift in Sources */,
