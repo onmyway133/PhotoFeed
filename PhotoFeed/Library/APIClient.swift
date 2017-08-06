@@ -25,4 +25,16 @@ class APIClient {
   var loginUrl: URL {
     return URL(string: "https://api.instagram.com/oauth/authorize/?client_id=\(clientId)&redirect_uri=\(redirectUri)&response_type=token")!
   }
+
+  func loadMedia() {
+    guard let accessToken = accessToken else {
+      return
+    }
+
+    request("https://api.instagram.com/v1/users/self",
+            parameters: ["access_token": accessToken])
+    .responseJSON { (response) in
+      print(response)
+    }
+  }
 }

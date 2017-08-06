@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4DFAB883362467A2ABF3F5F0 /* Pods_PhotoFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F79175BA34C7E461B469C604 /* Pods_PhotoFeed.framework */; };
+		D27FC11A1F3706880043D2AF /* MediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27FC1191F3706880043D2AF /* MediaCell.swift */; };
+		D27FC11C1F37069E0043D2AF /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27FC11B1F37069E0043D2AF /* Media.swift */; };
 		D2A885A81F35CBB00058171A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A885A71F35CBB00058171A /* AppDelegate.swift */; };
 		D2A885AA1F35CBB00058171A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A885A91F35CBB00058171A /* ViewController.swift */; };
 		D2A885AD1F35CBB00058171A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A885AB1F35CBB00058171A /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		403ABA58D3FA7A737F8B60CF /* Pods-PhotoFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoFeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoFeed/Pods-PhotoFeed.debug.xcconfig"; sourceTree = "<group>"; };
 		5FA29E7D04E45BDA6B141739 /* Pods-PhotoFeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoFeed.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoFeed/Pods-PhotoFeed.release.xcconfig"; sourceTree = "<group>"; };
+		D27FC1191F3706880043D2AF /* MediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaCell.swift; sourceTree = "<group>"; };
+		D27FC11B1F37069E0043D2AF /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		D2A885A41F35CBB00058171A /* PhotoFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A885A71F35CBB00058171A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2A885A91F35CBB00058171A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		D2A885B91F35CC0F0058171A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D27FC11B1F37069E0043D2AF /* Media.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 		D2A885C21F35CC0F0058171A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D27FC1191F3706880043D2AF /* MediaCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,9 +276,11 @@
 				D2A885AA1F35CBB00058171A /* ViewController.swift in Sources */,
 				D2A885C51F35CC0F0058171A /* LoginController.swift in Sources */,
 				D2A885CC1F35CC5B0058171A /* APIClient.swift in Sources */,
+				D27FC11A1F3706880043D2AF /* MediaCell.swift in Sources */,
 				D2A885C41F35CC0F0058171A /* FeedController.swift in Sources */,
 				D2A885A81F35CBB00058171A /* AppDelegate.swift in Sources */,
 				D2A885C81F35CC0F0058171A /* PostController.swift in Sources */,
+				D27FC11C1F37069E0043D2AF /* Media.swift in Sources */,
 				D2A885C71F35CC0F0058171A /* MenuController.swift in Sources */,
 				D2A885C61F35CC0F0058171A /* MainController.swift in Sources */,
 				D2A885C91F35CC0F0058171A /* ProfileController.swift in Sources */,

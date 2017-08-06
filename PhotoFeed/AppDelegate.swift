@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginControllerDelegate {
   }
 
   func showMain() {
-    mainController = MainController()
+    mainController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController") as? MainController
     window?.rootViewController = mainController!
   }
 

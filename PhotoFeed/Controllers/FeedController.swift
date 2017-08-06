@@ -1,5 +1,9 @@
 import UIKit
 
-class FeedController: UIViewController {
-  
+class FeedController: UITableViewController {
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    APIClient.shared.loadMedia()
+  }
 }
