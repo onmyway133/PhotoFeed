@@ -25,4 +25,5 @@ struct Media: Codable {
   let images: Images
   let link: URL
   let user: User
+  let location: String?
 }

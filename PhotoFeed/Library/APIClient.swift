@@ -29,7 +29,7 @@ class APIClient {
     return URL(string: "https://api.instagram.com/oauth/authorize/?client_id=\(clientId)&redirect_uri=\(redirectUri)&response_type=token")!
   }
 
-  func loadMedia(completion: ([Media]) -> Void) {
+  func loadMedia(completion: @escaping ([Media]) -> Void) {
     guard let accessToken = accessToken else {
       return
     }
@@ -40,7 +40,9 @@ class APIClient {
       if let data = response.result.value {
         do {
           let holder = try JSONDecoder().decode(DataHolder<Media>.self, from: data)
-          print(holder)
+          DispatchQueue.main.async {
+            completion(holder.list)
+          }
         } catch {
           print(error)
         }
