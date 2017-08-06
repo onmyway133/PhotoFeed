@@ -8,7 +8,7 @@ struct User: Codable {
     case username
   }
 
-  let id: Int
+  let id: String
   let name: String
   let picture: URL
   let username: String
