@@ -1,5 +1,12 @@
 import UIKit
 
-class MainController: UIViewController {
-  
+class MainController: UITabBarController {
+  var feedController: FeedController!
+  var profileController: ProfileController!
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    
+  }
 }

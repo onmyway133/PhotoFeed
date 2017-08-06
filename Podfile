@@ -5,5 +5,5 @@ target 'PhotoFeed' do
 
   pod 'Pastel'
   pod 'Alamofire'
-
+  pod 'Anchors', :git => 'https://github.com/onmyway133/Anchors'
 end

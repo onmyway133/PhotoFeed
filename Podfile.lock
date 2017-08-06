@@ -1,15 +1,27 @@
 PODS:
   - Alamofire (4.5.0)
+  - Anchors (1.2.0)
   - Pastel (0.3.0)
 
 DEPENDENCIES:
   - Alamofire
+  - Anchors (from `https://github.com/onmyway133/Anchors`)
   - Pastel
+
+EXTERNAL SOURCES:
+  Anchors:
+    :git: https://github.com/onmyway133/Anchors
+
+CHECKOUT OPTIONS:
+  Anchors:
+    :commit: 8fe0283a001fdc8b81b2801a5ed74a2265da83a8
+    :git: https://github.com/onmyway133/Anchors
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Anchors: c853b894099f52ff17ab1ed5eadde8cd6e72ae05
   Pastel: 738740c84f2b15bbcd96ebe99c4e6c2f5dd42262
 
-PODFILE CHECKSUM: e3b057edd235e66250af7af6f4ff10e817b96fd1
+PODFILE CHECKSUM: d2e64f458cea3a17d8a58e4fda42a03e8c5c03df
 
 COCOAPODS: 1.2.1
