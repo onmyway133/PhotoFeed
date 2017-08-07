@@ -142,6 +142,9 @@
                                                 <constraint firstAttribute="width" constant="40" id="kxO-Ev-JN7"/>
                                             </constraints>
                                             <state key="normal" image="ellipsis"/>
+                                            <connections>
+                                                <action selector="contextButtonTouched:" destination="B4n-mT-mGC" eventType="touchUpInside" id="8at-bE-YZY"/>
+                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qt9-Jb-1Bj">
                                             <rect key="frame" x="0.0" y="56" width="375" height="375"/>
@@ -167,6 +170,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ja-LG-qEq">
                                             <rect key="frame" x="335" y="439" width="40" height="25"/>
                                             <state key="normal" image="bookmark"/>
+                                            <connections>
+                                                <action selector="bookmarkButtonTouched:" destination="B4n-mT-mGC" eventType="touchUpInside" id="AJo-WV-eAD"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTu-RJ-E4P">
                                             <rect key="frame" x="8" y="472" width="359" height="21"/>
@@ -180,12 +186,18 @@
                                             <state key="normal" title="Button">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="viewLikeButtonTouched:" destination="B4n-mT-mGC" eventType="touchUpInside" id="KDQ-GA-2JI"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjj-uv-XMJ">
                                             <rect key="frame" x="8" y="557.5" width="359" height="30"/>
                                             <state key="normal" title="Button">
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="viewCommentButtonTouched:" destination="B4n-mT-mGC" eventType="touchUpInside" id="QDI-GN-ZWq"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

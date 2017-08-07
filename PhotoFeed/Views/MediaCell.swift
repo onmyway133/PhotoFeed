@@ -31,4 +31,20 @@ class MediaCell: UITableViewCell {
     usersWhoCommentButton.setTitle("View all \(media.comments.count) comments", for: .normal)
     captionLabel.text = media.caption?.text
   }
+
+  @IBAction func contextButtonTouched(_ sender: UIButton) {
+
+  }
+
+  @IBAction func bookmarkButtonTouched(_ sender: UIButton) {
+
+  }
+
+  @IBAction func viewLikeButtonTouched(_ sender: UIButton) {
+
+  }
+  
+  @IBAction func viewCommentButtonTouched(_ sender: UIButton) {
+
+  }
 }
