@@ -273,10 +273,10 @@
             </objects>
             <point key="canvasLocation" x="2757.5999999999999" y="-210.49475262368819"/>
         </scene>
-        <!--Likes Controller-->
+        <!--User Controller-->
         <scene sceneID="ZYL-9A-dCQ">
             <objects>
-                <tableViewController id="7ng-Z5-gc8" customClass="LikesController" customModule="PhotoFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7ng-Z5-gc8" customClass="UserController" customModule="PhotoFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e7Y-xX-kit">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
