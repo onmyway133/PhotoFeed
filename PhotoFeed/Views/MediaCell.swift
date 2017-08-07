@@ -48,7 +48,7 @@ class MediaCell: UITableViewCell {
 
   }
 
-  @IBAction func userButtonTouched(_ sender: UIButton) {
+  @IBAction func usernameButtonTouched(_ sender: UIButton) {
 
   }
 }

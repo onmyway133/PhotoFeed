@@ -1,10 +1,6 @@
 import UIKit
 
 class BaseController: UITableViewController {
-  func reloadData() {
-    // Subclass to decide
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -12,5 +8,9 @@ class BaseController: UITableViewController {
 
     refreshControl = UIRefreshControl()
     refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+  }
+
+  @objc func reloadData() {
+    // Subclass to decide
   }
 }

@@ -132,11 +132,11 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <state key="normal" title="Button"/>
                                             <connections>
-                                                <action selector="userButtonTouched:" destination="B4n-mT-mGC" eventType="touchUpInside" id="PIe-Lw-Pl0"/>
+                                                <action selector="usernameButtonTouched:" destination="B4n-mT-mGC" eventType="touchUpInside" id="XGQ-uL-mGQ"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISh-kG-t4y">
-                                            <rect key="frame" x="62" y="28.5" width="39.5" height="19.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISh-kG-t4y">
+                                            <rect key="frame" x="56" y="30" width="271" height="19.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -206,8 +206,9 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ISh-kG-t4y" firstAttribute="leading" secondItem="aXB-CW-dvb" secondAttribute="trailing" constant="14" id="1m5-8F-Ou6"/>
+                                        <constraint firstItem="ISh-kG-t4y" firstAttribute="top" secondItem="OYC-dK-Nmh" secondAttribute="top" constant="30" id="2kQ-eP-3TE"/>
                                         <constraint firstItem="6h3-i9-jlz" firstAttribute="top" secondItem="Rpy-Oc-gFf" secondAttribute="top" id="3cH-96-Kdm"/>
+                                        <constraint firstItem="ISh-kG-t4y" firstAttribute="trailing" secondItem="w4q-hu-Wba" secondAttribute="trailing" id="5d2-mx-HoX"/>
                                         <constraint firstItem="FeN-ge-lUy" firstAttribute="leading" secondItem="6h3-i9-jlz" secondAttribute="trailing" id="6Af-br-svA"/>
                                         <constraint firstAttribute="bottom" secondItem="Jjj-uv-XMJ" secondAttribute="bottom" constant="8" id="8cQ-nm-OAZ"/>
                                         <constraint firstItem="aXB-CW-dvb" firstAttribute="leading" secondItem="OYC-dK-Nmh" secondAttribute="leading" constant="8" id="9H7-bQ-xI3"/>
@@ -225,6 +226,7 @@
                                         <constraint firstItem="Jjj-uv-XMJ" firstAttribute="top" secondItem="gS3-xF-I0E" secondAttribute="bottom" constant="4" id="UC9-mI-gbs"/>
                                         <constraint firstItem="FeN-ge-lUy" firstAttribute="top" secondItem="Rpy-Oc-gFf" secondAttribute="top" id="Uln-F9-53e"/>
                                         <constraint firstItem="aXB-CW-dvb" firstAttribute="top" secondItem="OYC-dK-Nmh" secondAttribute="top" constant="8" id="Yw3-E0-ZyE"/>
+                                        <constraint firstItem="ISh-kG-t4y" firstAttribute="leading" secondItem="w4q-hu-Wba" secondAttribute="leading" id="ZM6-VJ-cl0"/>
                                         <constraint firstItem="qt9-Jb-1Bj" firstAttribute="width" secondItem="OYC-dK-Nmh" secondAttribute="width" id="a6N-hM-KNl"/>
                                         <constraint firstItem="6h3-i9-jlz" firstAttribute="width" secondItem="1Ja-LG-qEq" secondAttribute="width" id="aVR-ek-L8X"/>
                                         <constraint firstItem="Rpy-Oc-gFf" firstAttribute="width" secondItem="1Ja-LG-qEq" secondAttribute="width" id="air-gt-T4a"/>
@@ -300,9 +302,6 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <state key="normal" title="Button"/>
-                                            <connections>
-                                                <action selector="userButtonTouched:" destination="B4n-mT-mGC" eventType="touchUpInside" id="bYA-Qm-1sc"/>
-                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksE-kv-SE6">
                                             <rect key="frame" x="56" y="40" width="311" height="21"/>
