@@ -6,6 +6,10 @@ class FeedController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    loadData()
+  }
+
+  func loadData() {
     APIClient.shared.loadMedia { [weak self] mediaList in
       self?.items = mediaList
       self?.tableView.reloadData()
