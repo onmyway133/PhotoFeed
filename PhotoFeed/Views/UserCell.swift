@@ -18,4 +18,8 @@ class UserCell: UITableViewCell {
     usernameLabel.setTitle(user.username, for: .normal)
     nameLabel.text = user.name
   }
+
+  @IBAction func usernameButtonTouched(_ sender: UIButton) {
+    
+  }
 }

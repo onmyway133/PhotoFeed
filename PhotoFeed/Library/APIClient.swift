@@ -70,4 +70,25 @@ class APIClient {
         }
       })
   }
+
+  func loadComments(mediaId: String, completion: @escaping ([Comment]) -> Void) {
+    guard let accessToken = accessToken else {
+      return
+    }
+
+    request("https://api.instagram.com/v1/media/\(mediaId)/comments",
+      parameters: ["access_token": accessToken])
+      .responseData(completionHandler: { (response) in
+        if let data = response.result.value {
+          do {
+            let holder = try JSONDecoder().decode(DataHolder<Comment>.self, from: data)
+            DispatchQueue.main.async {
+              completion(holder.list)
+            }
+          } catch {
+            print(error)
+          }
+        }
+      })
+  }
 }
