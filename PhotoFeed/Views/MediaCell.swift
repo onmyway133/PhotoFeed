@@ -3,7 +3,7 @@ import Kingfisher
 
 class MediaCell: UITableViewCell {
   @IBOutlet weak var avatarImageView: UIImageView!
-  @IBOutlet weak var userNameLabel: UILabel!
+  @IBOutlet weak var userButton: UIButton!
   @IBOutlet weak var locationLabel: UILabel!
   @IBOutlet weak var contextButton: UIButton!
   @IBOutlet weak var mediaImageView: UIImageView!
@@ -24,7 +24,7 @@ class MediaCell: UITableViewCell {
 
   func configure(with media: Media) {
     avatarImageView.kf.setImage(with: media.user.avatar)
-    userNameLabel.text = media.user.displayName
+    userButton.setTitle(media.user.displayName, for: .normal)
     locationLabel.text = media.location?.name
     mediaImageView.kf.setImage(with: media.images.standard.url)
     usersWhoLikeButton.setTitle("\(media.likes.count) likes", for: .normal)
@@ -45,6 +45,10 @@ class MediaCell: UITableViewCell {
   }
   
   @IBAction func viewCommentButtonTouched(_ sender: UIButton) {
+
+  }
+
+  @IBAction func userButtonTouched(_ sender: UIButton) {
 
   }
 }
