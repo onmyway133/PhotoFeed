@@ -1,15 +1,9 @@
 import UIKit
 
-class FeedController: UITableViewController {
+class FeedController: BaseController {
   var items = [Media]()
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    loadData()
-  }
-
-  func loadData() {
+  override func loadData() {
     APIClient.shared.loadMedia { [weak self] mediaList in
       self?.items = mediaList
       self?.tableView.reloadData()

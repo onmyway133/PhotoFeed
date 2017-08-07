@@ -4,13 +4,18 @@ class BaseController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    reloadData()
+    loadData()
 
     refreshControl = UIRefreshControl()
-    refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+    refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
   }
 
-  @objc func reloadData() {
+  @objc private func handleRefresh() {
+    refreshControl?.endRefreshing()
+    loadData()
+  }
+
+  func loadData() {
     // Subclass to decide
   }
 }
