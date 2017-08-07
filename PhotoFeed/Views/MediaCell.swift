@@ -14,18 +14,21 @@ class MediaCell: UITableViewCell {
   @IBOutlet weak var usersWhoLikeButton: UIButton!
   @IBOutlet weak var usersWhoCommentButton: UIButton!
 
+  @IBOutlet weak var captionLabel: UILabel!
   override func layoutSubviews() {
     super.layoutSubviews()
 
+    avatarImageView.clipsToBounds = true
     avatarImageView.layer.cornerRadius = avatarImageView.frame.size.height/2
   }
 
   func configure(with media: Media) {
     avatarImageView.kf.setImage(with: media.user.avatar)
-    userNameLabel.text = media.user.name
-    locationLabel.text = media.location
+    userNameLabel.text = media.user.displayName
+    locationLabel.text = media.location?.name
     mediaImageView.kf.setImage(with: media.images.standard.url)
     usersWhoLikeButton.setTitle("\(media.likes.count) likes", for: .normal)
     usersWhoCommentButton.setTitle("View all \(media.comments.count) comments", for: .normal)
+    captionLabel.text = media.caption?.text
   }
 }

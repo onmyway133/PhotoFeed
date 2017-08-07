@@ -19,11 +19,20 @@ struct Media: Codable {
     let thumbnail: Image
   }
 
+  struct Location: Codable {
+    let name: String
+  }
+
+  struct Caption: Codable {
+    let text: String
+  }
+
   let id: String
   let comments: Comments
   let likes: Likes
   let images: Images
   let link: URL
   let user: User
-  let location: String?
+  let location: Location?
+  let caption: Caption?
 }

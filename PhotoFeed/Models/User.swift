@@ -9,7 +9,11 @@ struct User: Codable {
   }
 
   let id: String
-  let name: String
+  private let name: String
   let avatar: URL
-  let username: String
+  private let username: String
+
+  var displayName: String {
+    return name.isEmpty ? username : name
+  }
 }
