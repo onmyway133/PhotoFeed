@@ -1,7 +1,6 @@
 import UIKit
 
-class FeedController: BaseController {
-  var items = [Media]()
+class FeedController: BaseController<Media, MediaCell> {
 
   override func loadData() {
     APIClient.shared.loadMedia { [weak self] mediaList in
@@ -10,23 +9,7 @@ class FeedController: BaseController {
     }
   }
 
-  // MARK: - UITableViewDataSource
-
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return items.count
-  }
-
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MediaCell
-    let item = items[indexPath.row]
-    cell.configure(with: item)
-
-    return cell
-  }
-
-  // MARK: - UITableViewDelegate
-
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.deselectRow(at: indexPath, animated: true)
+  override func configure(cell: MediaCell, model: Media) {
+    cell.configure(with: model)
   }
 }
