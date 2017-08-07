@@ -23,7 +23,7 @@ class FeedController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "MediaCell", for: indexPath) as! MediaCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MediaCell
     let item = items[indexPath.row]
     cell.configure(with: item)
 

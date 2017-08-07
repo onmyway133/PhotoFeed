@@ -24,7 +24,7 @@ class MediaCell: UITableViewCell {
 
   func configure(with media: Media) {
     avatarImageView.kf.setImage(with: media.user.avatar)
-    userButton.setTitle(media.user.displayName, for: .normal)
+    userButton.setTitle(media.user.username, for: .normal)
     locationLabel.text = media.location?.name
     mediaImageView.kf.setImage(with: media.images.standard.url)
     usersWhoLikeButton.setTitle("\(media.likes.count) likes", for: .normal)
