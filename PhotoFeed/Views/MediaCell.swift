@@ -1,6 +1,11 @@
 import UIKit
 import Kingfisher
 
+protocol MediaCellDelegate: class {
+  func mediaCell(_ cell: MediaCell, didViewLikes mediaId: String)
+  func mediaCell(_ cell: MediaCell, didViewComments mediaId: String)
+}
+
 class MediaCell: UITableViewCell {
   @IBOutlet weak var avatarImageView: UIImageView!
   @IBOutlet weak var userButton: UIButton!
@@ -13,8 +18,11 @@ class MediaCell: UITableViewCell {
   @IBOutlet weak var bookmarkButton: UIButton!
   @IBOutlet weak var usersWhoLikeButton: UIButton!
   @IBOutlet weak var usersWhoCommentButton: UIButton!
-
   @IBOutlet weak var captionLabel: UILabel!
+
+  var mediaId: String?
+  weak var delegate: MediaCellDelegate?
+
   override func layoutSubviews() {
     super.layoutSubviews()
 
@@ -23,6 +31,8 @@ class MediaCell: UITableViewCell {
   }
 
   func configure(with media: Media) {
+    self.mediaId = media.id
+
     avatarImageView.kf.setImage(with: media.user.avatar)
     userButton.setTitle(media.user.username, for: .normal)
     locationLabel.text = media.location?.name
@@ -41,11 +51,19 @@ class MediaCell: UITableViewCell {
   }
 
   @IBAction func viewLikeButtonTouched(_ sender: UIButton) {
+    guard let id = mediaId else {
+      return
+    }
 
+    delegate?.mediaCell(self, didViewLikes: id)
   }
   
   @IBAction func viewCommentButtonTouched(_ sender: UIButton) {
+    guard let id = mediaId else {
+      return
+    }
 
+    delegate?.mediaCell(self, didViewComments: id)
   }
 
   @IBAction func usernameButtonTouched(_ sender: UIButton) {

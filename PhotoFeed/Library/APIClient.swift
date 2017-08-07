@@ -49,4 +49,25 @@ class APIClient {
       }
     })
   }
+
+  func loadUsersWhoLike(mediaId: String, completion: @escaping ([User]) -> Void) {
+    guard let accessToken = accessToken else {
+      return
+    }
+
+    request("https://api.instagram.com/v1/media/\(mediaId)/likes",
+            parameters: ["access_token": accessToken])
+      .responseData(completionHandler: { (response) in
+        if let data = response.result.value {
+          do {
+            let holder = try JSONDecoder().decode(DataHolder<User>.self, from: data)
+            DispatchQueue.main.async {
+              completion(holder.list)
+            }
+          } catch {
+            print(error)
+          }
+        }
+      })
+  }
 }
