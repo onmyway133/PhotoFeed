@@ -1,4 +1,5 @@
 import UIKit
+import Anchors
 
 class UserController: CollectionController<Media, ImageCell>, UICollectionViewDelegateFlowLayout {
 
@@ -8,8 +9,16 @@ class UserController: CollectionController<Media, ImageCell>, UICollectionViewDe
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    let offset: CGFloat = 200
+
     collectionView?.addSubview(userView)
-    collectionView?.contentInset.top = 500
+    collectionView?.contentInset.top = offset
+    userView.frame = CGRect(x: 0,
+                            y: -offset,
+                            width: collectionView!.frame.size.width,
+                            height: offset)
+
+    userView.messageButton.setTitle("Message", for: .normal)
   }
 
   override func loadData() {
