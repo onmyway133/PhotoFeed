@@ -1,7 +1,16 @@
 import UIKit
 
 class UserController: CollectionController<Media, ImageCell>, UICollectionViewDelegateFlowLayout {
+
   var userId: String?
+  let userView = UserView()
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    collectionView?.addSubview(userView)
+    collectionView?.contentInset.top = 500
+  }
 
   override func loadData() {
     guard let userId = userId else {
@@ -11,6 +20,10 @@ class UserController: CollectionController<Media, ImageCell>, UICollectionViewDe
     APIClient.shared.loadMedia(userId: userId) { [weak self] (mediaList) in
       self?.items = mediaList
       self?.collectionView?.reloadData()
+    }
+
+    APIClient.shared.loadInfo(userId: userId) { [weak self] (user) in
+      self?.userView.configure(with: user)
     }
   }
 
