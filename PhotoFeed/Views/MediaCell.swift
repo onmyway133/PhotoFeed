@@ -4,6 +4,7 @@ import Kingfisher
 protocol MediaCellDelegate: class {
   func mediaCell(_ cell: MediaCell, didViewLikes mediaId: String)
   func mediaCell(_ cell: MediaCell, didViewComments mediaId: String)
+  func mediaCell(_ cell: MediaCell, didSelectUserName userId: String)
 }
 
 class MediaCell: UITableViewCell {
@@ -20,7 +21,7 @@ class MediaCell: UITableViewCell {
   @IBOutlet weak var usersWhoCommentButton: UIButton!
   @IBOutlet weak var captionLabel: UILabel!
 
-  var mediaId: String?
+  var media: Media?
   weak var delegate: MediaCellDelegate?
 
   override func layoutSubviews() {
@@ -31,7 +32,7 @@ class MediaCell: UITableViewCell {
   }
 
   func configure(with media: Media) {
-    self.mediaId = media.id
+    self.media = media
 
     avatarImageView.kf.setImage(with: media.user.avatar)
     userButton.setTitle(media.user.username, for: .normal)
@@ -51,7 +52,7 @@ class MediaCell: UITableViewCell {
   }
 
   @IBAction func viewLikeButtonTouched(_ sender: UIButton) {
-    guard let id = mediaId else {
+    guard let id = media?.id else {
       return
     }
 
@@ -59,7 +60,7 @@ class MediaCell: UITableViewCell {
   }
   
   @IBAction func viewCommentButtonTouched(_ sender: UIButton) {
-    guard let id = mediaId else {
+    guard let id = media?.id else {
       return
     }
 
@@ -67,6 +68,10 @@ class MediaCell: UITableViewCell {
   }
 
   @IBAction func usernameButtonTouched(_ sender: UIButton) {
+    guard let id = media?.user.id else {
+      return
+    }
 
+    delegate?.mediaCell(self, didSelectUserName: id)
   }
 }

@@ -63,6 +63,69 @@
             </objects>
             <point key="canvasLocation" x="2758" y="446"/>
         </scene>
+        <!--User Controller-->
+        <scene sceneID="pI3-sV-JZD">
+            <objects>
+                <viewController storyboardIdentifier="UserController" id="PoD-ev-1ob" customClass="UserController" customModule="PhotoFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KpA-AM-EfF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cog-F7-vW6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nm3-1r-EXw">
+                                        <rect key="frame" x="0.0" y="-3" width="64" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="ywD-Ba-7Bi"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PYA-Uj-I69">
+                                <rect key="frame" x="0.0" y="125" width="375" height="533"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sm3-NC-X4h">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eNT-Tx-KPQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PYA-Uj-I69" firstAttribute="top" secondItem="cog-F7-vW6" secondAttribute="bottom" id="DeL-ws-7ON"/>
+                            <constraint firstItem="vuj-FS-KTj" firstAttribute="trailing" secondItem="cog-F7-vW6" secondAttribute="trailing" id="FPc-Zf-nU7"/>
+                            <constraint firstItem="vuj-FS-KTj" firstAttribute="bottom" secondItem="PYA-Uj-I69" secondAttribute="bottom" constant="9" id="GWh-bg-INJ"/>
+                            <constraint firstItem="cog-F7-vW6" firstAttribute="leading" secondItem="vuj-FS-KTj" secondAttribute="leading" id="UcS-cI-ivC"/>
+                            <constraint firstItem="PYA-Uj-I69" firstAttribute="leading" secondItem="vuj-FS-KTj" secondAttribute="leading" id="d1H-Q9-rx1"/>
+                            <constraint firstItem="vuj-FS-KTj" firstAttribute="trailing" secondItem="PYA-Uj-I69" secondAttribute="trailing" id="eH9-XX-GyG"/>
+                            <constraint firstItem="vuj-FS-KTj" firstAttribute="top" secondItem="cog-F7-vW6" secondAttribute="top" constant="20" id="z4F-go-ceT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vuj-FS-KTj"/>
+                    </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="nm3-1r-EXw" id="8V4-Of-Qfg"/>
+                        <outlet property="collectionView" destination="PYA-Uj-I69" id="S9U-mz-bB2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wcD-Z5-VvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3424.8000000000002" y="308.9955022488756"/>
+        </scene>
         <!--Main Controller-->
         <scene sceneID="Gbs-Sb-mYW">
             <objects>

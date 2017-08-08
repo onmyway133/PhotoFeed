@@ -27,4 +27,10 @@ class FeedController: BaseController<Media, MediaCell>, MediaCellDelegate {
     controller.mediaId = mediaId
     navigationController?.pushViewController(controller, animated: true)
   }
+
+  func mediaCell(_ cell: MediaCell, didSelectUserName userId: String) {
+    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserController") as! UserController
+    controller.userId = userId
+    navigationController?.pushViewController(controller, animated: true)
+  }
 }

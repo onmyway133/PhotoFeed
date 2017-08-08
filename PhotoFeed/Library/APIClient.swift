@@ -39,7 +39,7 @@ class APIClient {
     .responseData(completionHandler: { (response) in
       if let data = response.result.value {
         do {
-          let holder = try JSONDecoder().decode(DataHolder<Media>.self, from: data)
+          let holder = try JSONDecoder().decode(ListHolder<Media>.self, from: data)
           DispatchQueue.main.async {
             completion(holder.list)
           }
@@ -60,7 +60,7 @@ class APIClient {
       .responseData(completionHandler: { (response) in
         if let data = response.result.value {
           do {
-            let holder = try JSONDecoder().decode(DataHolder<User>.self, from: data)
+            let holder = try JSONDecoder().decode(ListHolder<User>.self, from: data)
             DispatchQueue.main.async {
               completion(holder.list)
             }
@@ -81,9 +81,30 @@ class APIClient {
       .responseData(completionHandler: { (response) in
         if let data = response.result.value {
           do {
-            let holder = try JSONDecoder().decode(DataHolder<Comment>.self, from: data)
+            let holder = try JSONDecoder().decode(ListHolder<Comment>.self, from: data)
             DispatchQueue.main.async {
               completion(holder.list)
+            }
+          } catch {
+            print(error)
+          }
+        }
+      })
+  }
+
+  func loadInfo(userId: String, completion: @escaping (User) -> Void) {
+    guard let accessToken = accessToken else {
+      return
+    }
+
+    request("https://api.instagram.com/v1/users/\(userId)",
+      parameters: ["access_token": accessToken])
+      .responseData(completionHandler: { (response) in
+        if let data = response.result.value {
+          do {
+            let holder = try JSONDecoder().decode(OneHolder<User>.self, from: data)
+            DispatchQueue.main.async {
+              completion(holder.one)
             }
           } catch {
             print(error)
