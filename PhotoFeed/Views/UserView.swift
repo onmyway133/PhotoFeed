@@ -63,7 +63,7 @@ class UserView: UIView {
 
     activate(
       avatarImageView.anchor.top.left.constant(8),
-      avatarImageView.anchor.size.equal.to(80),
+      avatarImageView.anchor.size.equal.to(100),
 
       nameLabel.anchor.left.constant(8),
       nameLabel.anchor.top.equal.to(avatarImageView.anchor.bottom).constant(20),
@@ -103,7 +103,7 @@ class UserView: UIView {
       messageButton.anchor.top.equal
         .to(mediaTextLabel.anchor.bottom).constant(10),
       messageButton.anchor.left.equal
-        .to(avatarImageView.anchor.right).constant(50),
+        .to(avatarImageView.anchor.right).constant(30),
       messageButton.anchor.right.constant(-30),
       messageButton.anchor.height.equal.to(36)
     )
