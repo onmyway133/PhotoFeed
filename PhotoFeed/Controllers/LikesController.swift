@@ -1,6 +1,6 @@
 import UIKit
 
-class LikesController: BaseController<User, UserCell> {
+class LikesController: TableController<User, UserCell> {
   var mediaId: String?
 
   override func loadData() {

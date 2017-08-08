@@ -1,6 +1,6 @@
 import UIKit
 
-class FeedController: BaseController<Media, MediaCell>, MediaCellDelegate {
+class FeedController: TableController<Media, MediaCell>, MediaCellDelegate {
 
   override func loadData() {
     APIClient.shared.loadMedia { [weak self] mediaList in

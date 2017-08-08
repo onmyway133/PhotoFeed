@@ -1,6 +1,6 @@
 import UIKit
 
-class BaseController<Model: Codable, Cell: UITableViewCell>: UITableViewController {
+class TableController<Model: Codable, Cell: UITableViewCell>: UITableViewController {
   var items = [Model]()
 
   override func viewDidLoad() {

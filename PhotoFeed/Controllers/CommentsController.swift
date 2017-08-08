@@ -1,6 +1,6 @@
 import UIKit
 
-class CommentsController: BaseController<Comment, CommentCell> {
+class CommentsController: TableController<Comment, CommentCell> {
   var mediaId: String?
 
   override func loadData() {

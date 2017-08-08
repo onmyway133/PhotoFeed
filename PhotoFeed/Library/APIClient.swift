@@ -29,12 +29,12 @@ class APIClient {
     return URL(string: "https://api.instagram.com/oauth/authorize/?client_id=\(clientId)&redirect_uri=\(redirectUri)&response_type=token")!
   }
 
-  func loadMedia(completion: @escaping ([Media]) -> Void) {
+  func loadMedia(userId: String = "self", completion: @escaping ([Media]) -> Void) {
     guard let accessToken = accessToken else {
       return
     }
 
-    request("https://api.instagram.com/v1/users/self/media/recent",
+    request("https://api.instagram.com/v1/users/\(userId)/media/recent",
             parameters: ["access_token": accessToken])
     .responseData(completionHandler: { (response) in
       if let data = response.result.value {
