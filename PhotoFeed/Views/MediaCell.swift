@@ -21,7 +21,7 @@ class MediaCell: UITableViewCell {
   @IBOutlet weak var usersWhoCommentButton: UIButton!
   @IBOutlet weak var captionLabel: UILabel!
 
-  var media: Media?
+  private var media: Media?
   weak var delegate: MediaCellDelegate?
 
   override func layoutSubviews() {

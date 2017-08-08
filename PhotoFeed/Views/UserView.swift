@@ -2,6 +2,11 @@ import UIKit
 import Anchors
 import Kingfisher
 
+protocol UserViewDelegate: class {
+  func userView(_ view: UserView, didViewFollowing userId: String)
+  func userVIew(_ view: UserView, didViewFollower userId: String)
+}
+
 class UserView: UIView {
   let avatarImageView = UIImageView()
   let nameLabel = UILabel()
@@ -15,7 +20,11 @@ class UserView: UIView {
   let followedByTextLabel = UILabel()
   let messageButton = UIButton()
 
+  private var userId: String?
+
   func configure(with user: User) {
+    self.user = user
+
     avatarImageView.kf.setImage(with: user.avatar)
     nameLabel.text = user.name
     bioLabel.text = user.bio
