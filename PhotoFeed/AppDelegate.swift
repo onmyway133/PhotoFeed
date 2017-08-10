@@ -38,17 +38,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginControllerDelegate {
     loginController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginController") as? LoginController
     loginController?.delegate = self
     window?.rootViewController = loginController!
+
+    mainController = nil
   }
 
   func showMain() {
     mainController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainController") as? MainController
     window?.rootViewController = mainController!
+
+    loginController = nil
   }
 
   // MARK: - LoginControllerDelegate
 
   func loginControllerDidFinish(_ controller: LoginController) {
-    loginController = nil
     showMain()
   }
 }
