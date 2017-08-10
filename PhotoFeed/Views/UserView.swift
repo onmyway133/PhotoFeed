@@ -94,7 +94,7 @@ class UserView: UIView {
       websiteLabel.anchor.left.constant(8),
       websiteLabel.anchor.top.equal.to(bioLabel.anchor.bottom).constant(8),
 
-      followsCountButton.anchor.right.constant(-50),
+      followsCountButton.anchor.right.constant(-40),
       followsCountButton.anchor.top.constant(2),
 
       followsTextLabel.anchor.top.equal
@@ -103,7 +103,7 @@ class UserView: UIView {
         .to(followsCountButton.anchor.centerX),
 
       followedByCountButton.anchor.right.equal
-        .to(followsCountButton.anchor.left).constant(-60),
+        .to(followsCountButton.anchor.left).constant(-50),
       followedByCountButton.anchor.top.constant(2),
 
       followedByTextLabel.anchor.top.equal
@@ -112,7 +112,7 @@ class UserView: UIView {
         .to(followedByCountButton.anchor.centerX),
 
       mediaCountLabel.anchor.right.equal
-        .to(followedByCountButton.anchor.left).constant(-60),
+        .to(followedByCountButton.anchor.left).constant(-50),
       mediaCountLabel.anchor.top.constant(10),
 
       mediaTextLabel.anchor.top.equal
