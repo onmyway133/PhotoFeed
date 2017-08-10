@@ -2,6 +2,17 @@ import UIKit
 
 class FeedController: TableController<Media, MediaCell>, MediaCellDelegate {
 
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    // title
+    let label = UILabel()
+    label.text = "Photo Feed"
+    label.textColor = .black
+    label.font = UIFont(name: "Noteworthy-Bold", size: 25)
+    navigationItem.titleView = label
+  }
+
   override func loadData() {
     APIClient.shared.loadMedia { [weak self] mediaList in
       self?.items = mediaList
