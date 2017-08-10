@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginControllerDelegate {
 
     window?.makeKeyAndVisible()
 
+    // Appearance
+    UINavigationBar.appearance().barTintColor = 
+      UIColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1)
+
     return true
   }
 
