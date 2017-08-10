@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Noteworthy.ttc">
+            <string>Noteworthy-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -18,11 +23,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Feed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="350-OS-Hjg">
+                                <rect key="frame" x="94.5" y="207.5" width="186.5" height="64"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ow-23-LEO">
-                                <rect key="frame" x="30" y="328.5" width="315" height="30"/>
+                                <rect key="frame" x="30" y="321.5" width="315" height="44"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="QkD-Cu-oKN"/>
+                                    <constraint firstAttribute="height" constant="44" id="QkD-Cu-oKN"/>
                                 </constraints>
                                 <state key="normal" title="Log in"/>
                                 <connections>
@@ -32,8 +43,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="0ow-23-LEO" firstAttribute="top" secondItem="350-OS-Hjg" secondAttribute="bottom" constant="50" id="21z-Nx-HmW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0ow-23-LEO" secondAttribute="trailing" constant="30" id="MsO-Sq-X0s"/>
                             <constraint firstItem="0ow-23-LEO" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="WyA-5n-15X"/>
+                            <constraint firstItem="350-OS-Hjg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tzL-c6-JX0"/>
                             <constraint firstItem="0ow-23-LEO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="vqS-e7-vHO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
