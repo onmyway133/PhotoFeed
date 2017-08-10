@@ -95,24 +95,24 @@ class UserView: UIView {
       websiteLabel.anchor.top.equal.to(bioLabel.anchor.bottom).constant(8),
 
       followsCountButton.anchor.right.constant(-50),
-      followsCountButton.anchor.top.constant(10),
+      followsCountButton.anchor.top.constant(2),
 
       followsTextLabel.anchor.top.equal
-        .to(followsCountButton.anchor.bottom).constant(8),
+        .to(followsCountButton.anchor.bottom).constant(4),
       followsTextLabel.anchor.centerX.equal
         .to(followsCountButton.anchor.centerX),
 
       followedByCountButton.anchor.right.equal
-        .to(followsCountButton.anchor.left).constant(-80),
-      followedByCountButton.anchor.top.constant(10),
+        .to(followsCountButton.anchor.left).constant(-60),
+      followedByCountButton.anchor.top.constant(2),
 
       followedByTextLabel.anchor.top.equal
-        .to(followedByCountButton.anchor.bottom).constant(8),
+        .to(followedByCountButton.anchor.bottom).constant(4),
       followedByTextLabel.anchor.centerX.equal
         .to(followedByCountButton.anchor.centerX),
 
       mediaCountLabel.anchor.right.equal
-        .to(followedByCountButton.anchor.left).constant(-80),
+        .to(followedByCountButton.anchor.left).constant(-60),
       mediaCountLabel.anchor.top.constant(10),
 
       mediaTextLabel.anchor.top.equal
