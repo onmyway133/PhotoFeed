@@ -1,7 +1,7 @@
 import UIKit
 import Anchors
 
-class UserController: CollectionController<Media, ImageCell>, UICollectionViewDelegateFlowLayout {
+class UserController: CollectionController<Media, ImageCell>, UICollectionViewDelegateFlowLayout, UserViewDelegate {
 
   var userId: String?
   let userView = UserView()
@@ -19,6 +19,7 @@ class UserController: CollectionController<Media, ImageCell>, UICollectionViewDe
                             height: offset)
 
     userView.messageButton.setTitle("Message", for: .normal)
+    userView.delegate = self
 
     // Navigation bar
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ellipsis"),
@@ -50,5 +51,19 @@ class UserController: CollectionController<Media, ImageCell>, UICollectionViewDe
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let size = collectionView.frame.size.width / 3 - 2
     return CGSize(width: size, height: size)
+  }
+
+  // MARK: - UserViewDelegate
+
+  func userView(_ view: UserView, didViewFollower userId: String) {
+    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FollowerController") as! FollowerController
+    controller.userId = userId
+    navigationController?.pushViewController(controller, animated: true)
+  }
+
+  func userView(_ view: UserView, didViewFollowing userId: String) {
+    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FollowingController") as! FollowingController
+    controller.userId = userId
+    navigationController?.pushViewController(controller, animated: true)
   }
 }
