@@ -57,18 +57,18 @@ class APIClient {
 
     request("https://api.instagram.com/v1/media/\(mediaId)/likes",
             parameters: ["access_token": accessToken])
-      .responseData(completionHandler: { (response) in
-        if let data = response.result.value {
-          do {
-            let holder = try JSONDecoder().decode(ListHolder<User>.self, from: data)
-            DispatchQueue.main.async {
-              completion(holder.list)
-            }
-          } catch {
-            print(error)
+    .responseData(completionHandler: { (response) in
+      if let data = response.result.value {
+        do {
+          let holder = try JSONDecoder().decode(ListHolder<User>.self, from: data)
+          DispatchQueue.main.async {
+            completion(holder.list)
           }
+        } catch {
+          print(error)
         }
-      })
+      }
+    })
   }
 
   func loadComments(mediaId: String, completion: @escaping ([Comment]) -> Void) {
@@ -78,18 +78,18 @@ class APIClient {
 
     request("https://api.instagram.com/v1/media/\(mediaId)/comments",
       parameters: ["access_token": accessToken])
-      .responseData(completionHandler: { (response) in
-        if let data = response.result.value {
-          do {
-            let holder = try JSONDecoder().decode(ListHolder<Comment>.self, from: data)
-            DispatchQueue.main.async {
-              completion(holder.list)
-            }
-          } catch {
-            print(error)
+    .responseData(completionHandler: { (response) in
+      if let data = response.result.value {
+        do {
+          let holder = try JSONDecoder().decode(ListHolder<Comment>.self, from: data)
+          DispatchQueue.main.async {
+            completion(holder.list)
           }
+        } catch {
+          print(error)
         }
-      })
+      }
+    })
   }
 
   func loadInfo(userId: String, completion: @escaping (User) -> Void) {
@@ -99,12 +99,54 @@ class APIClient {
 
     request("https://api.instagram.com/v1/users/\(userId)",
       parameters: ["access_token": accessToken])
+    .responseData(completionHandler: { (response) in
+      if let data = response.result.value {
+        do {
+          let holder = try JSONDecoder().decode(OneHolder<User>.self, from: data)
+          DispatchQueue.main.async {
+            completion(holder.one)
+          }
+        } catch {
+          print(error)
+        }
+      }
+    })
+  }
+
+  func loadFollowing(userId: String, completion: @escaping ([User]) -> Void) {
+    guard let accessToken = accessToken else {
+      return
+    }
+
+    request("https://api.instagram.com/v1/users/\(userId)/follows",
+      parameters: ["access_token": accessToken])
+    .responseData(completionHandler: { (response) in
+      if let data = response.result.value {
+        do {
+          let holder = try JSONDecoder().decode(ListHolder<User>.self, from: data)
+          DispatchQueue.main.async {
+            completion(holder.list)
+          }
+        } catch {
+          print(error)
+        }
+      }
+    })
+  }
+
+  func loadFollowers(userId: String, completion: @escaping ([User]) -> Void) {
+    guard let accessToken = accessToken else {
+      return
+    }
+
+    request("https://api.instagram.com/v1/users/\(userId)/followed-by",
+      parameters: ["access_token": accessToken])
       .responseData(completionHandler: { (response) in
         if let data = response.result.value {
           do {
-            let holder = try JSONDecoder().decode(OneHolder<User>.self, from: data)
+            let holder = try JSONDecoder().decode(ListHolder<User>.self, from: data)
             DispatchQueue.main.async {
-              completion(holder.one)
+              completion(holder.list)
             }
           } catch {
             print(error)

@@ -44,11 +44,11 @@ class MediaCell: UITableViewCell {
   }
 
   @IBAction func contextButtonTouched(_ sender: UIButton) {
-
+    // TODO
   }
 
   @IBAction func bookmarkButtonTouched(_ sender: UIButton) {
-
+    // TODO
   }
 
   @IBAction func viewLikeButtonTouched(_ sender: UIButton) {

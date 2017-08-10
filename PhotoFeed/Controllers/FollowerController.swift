@@ -4,11 +4,11 @@ class FollowerController: TableController<User, UserCell> {
   var userId: String?
 
   override func loadData() {
-    guard let mediaId = mediaId else {
+    guard let userId = userId else {
       return
     }
 
-    APIClient.shared.loadUsersWhoLike(mediaId: mediaId) { [weak self] (users) in
+    APIClient.shared.loadFollowers(userId: userId) { [weak self] (users) in
       self?.items = users
       self?.tableView.reloadData()
     }

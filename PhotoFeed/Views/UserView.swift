@@ -4,7 +4,7 @@ import Kingfisher
 
 protocol UserViewDelegate: class {
   func userView(_ view: UserView, didViewFollowing userId: String)
-  func userVIew(_ view: UserView, didViewFollower userId: String)
+  func userView(_ view: UserView, didViewFollower userId: String)
 }
 
 class UserView: UIView {
@@ -14,24 +14,25 @@ class UserView: UIView {
   let websiteLabel = UILabel()
   let mediaCountLabel = UILabel()
   let mediaTextLabel = UILabel()
-  let followsCountLabel = UILabel()
+  let followsCountButton = UIButton()
   let followsTextLabel = UILabel()
-  let followedByCountLabel = UILabel()
+  let followedByCountButton = UIButton()
   let followedByTextLabel = UILabel()
   let messageButton = UIButton()
 
   private var userId: String?
+  weak var delegate: UserViewDelegate?
 
   func configure(with user: User) {
-    self.user = user
+    self.userId = user.id
 
     avatarImageView.kf.setImage(with: user.avatar)
     nameLabel.text = user.name
     bioLabel.text = user.bio
     websiteLabel.text = user.website
     mediaCountLabel.text = "\(user.counts?.media ?? 0)"
-    followsCountLabel.text = "\(user.counts?.follows ?? 0)"
-    followedByCountLabel.text = "\(user.counts?.followedBy ?? 0)"
+    followsCountButton.setTitle("\(user.counts?.follows ?? 0)", for: .normal)
+    followedByCountButton.setTitle("\(user.counts?.followedBy ?? 0)", for: .normal)
   }
 
   override func layoutSubviews() {
@@ -45,20 +46,30 @@ class UserView: UIView {
     super.didMoveToSuperview()
 
     [avatarImageView, nameLabel, bioLabel, websiteLabel,
-     mediaCountLabel, followsCountLabel, followedByCountLabel,
+     mediaCountLabel, followsCountButton, followedByCountButton,
      mediaTextLabel, followsTextLabel, followedByTextLabel,
      messageButton].forEach {
       addSubview($0)
     }
 
     nameLabel.font = UIFont.boldSystemFont(ofSize: 17)
-    [mediaCountLabel, followsCountLabel, followedByCountLabel].forEach {
-      $0.font = UIFont.boldSystemFont(ofSize: 17)
+    mediaCountLabel.font = UIFont.boldSystemFont(ofSize: 17)
+    [followsCountButton, followedByCountButton].forEach {
+      $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+      $0.setTitleColor(.black, for: .normal)
     }
+
+    followsCountButton.addTarget(self,
+                                 action: #selector(viewFollowing),
+                                 for: .touchUpInside)
+    followedByCountButton.addTarget(self,
+                                    action: #selector(viewFollower),
+                                    for: .touchUpInside)
 
     [mediaTextLabel, followsTextLabel, followedByTextLabel].forEach {
       $0.textColor = UIColor.darkGray
     }
+
 
     mediaTextLabel.text = "posts"
     followsTextLabel.text = "following"
@@ -83,25 +94,25 @@ class UserView: UIView {
       websiteLabel.anchor.left.constant(8),
       websiteLabel.anchor.top.equal.to(bioLabel.anchor.bottom).constant(8),
 
-      followsCountLabel.anchor.right.constant(-50),
-      followsCountLabel.anchor.top.constant(10),
+      followsCountButton.anchor.right.constant(-50),
+      followsCountButton.anchor.top.constant(10),
 
       followsTextLabel.anchor.top.equal
-        .to(followsCountLabel.anchor.bottom).constant(8),
+        .to(followsCountButton.anchor.bottom).constant(8),
       followsTextLabel.anchor.centerX.equal
-        .to(followsCountLabel.anchor.centerX),
+        .to(followsCountButton.anchor.centerX),
 
-      followedByCountLabel.anchor.right.equal
-        .to(followsCountLabel.anchor.left).constant(-80),
-      followedByCountLabel.anchor.top.constant(10),
+      followedByCountButton.anchor.right.equal
+        .to(followsCountButton.anchor.left).constant(-80),
+      followedByCountButton.anchor.top.constant(10),
 
       followedByTextLabel.anchor.top.equal
-        .to(followedByCountLabel.anchor.bottom).constant(8),
+        .to(followedByCountButton.anchor.bottom).constant(8),
       followedByTextLabel.anchor.centerX.equal
-        .to(followedByCountLabel.anchor.centerX),
+        .to(followedByCountButton.anchor.centerX),
 
       mediaCountLabel.anchor.right.equal
-        .to(followedByCountLabel.anchor.left).constant(-80),
+        .to(followedByCountButton.anchor.left).constant(-80),
       mediaCountLabel.anchor.top.constant(10),
 
       mediaTextLabel.anchor.top.equal
@@ -116,5 +127,21 @@ class UserView: UIView {
       messageButton.anchor.right.constant(-30),
       messageButton.anchor.height.equal.to(36)
     )
+  }
+
+  @objc func viewFollowing(_sender: UIButton) {
+    guard let userId = userId else {
+      return
+    }
+
+    delegate?.userView(self, didViewFollowing: userId)
+  }
+
+  @objc func viewFollower(_sender: UIButton) {
+    guard let userId = userId else {
+      return
+    }
+
+    delegate?.userView(self, didViewFollower: userId)
   }
 }
