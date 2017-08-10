@@ -322,10 +322,10 @@
             </objects>
             <point key="canvasLocation" x="2757.5999999999999" y="-210.49475262368819"/>
         </scene>
-        <!--Likes Controller-->
+        <!--Likes-->
         <scene sceneID="ZYL-9A-dCQ">
             <objects>
-                <tableViewController storyboardIdentifier="LikesController" id="7ng-Z5-gc8" customClass="LikesController" customModule="PhotoFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LikesController" title="Likes" id="7ng-Z5-gc8" customClass="LikesController" customModule="PhotoFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e7Y-xX-kit">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -391,10 +391,10 @@
             </objects>
             <point key="canvasLocation" x="3426" y="-450"/>
         </scene>
-        <!--Comments Controller-->
+        <!--Comments-->
         <scene sceneID="1Fg-Tf-e2L">
             <objects>
-                <tableViewController storyboardIdentifier="CommentsController" id="NXb-eI-8L8" customClass="CommentsController" customModule="PhotoFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CommentsController" title="Comments" id="NXb-eI-8L8" customClass="CommentsController" customModule="PhotoFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FGL-X8-dGM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -481,10 +481,10 @@
             </objects>
             <point key="canvasLocation" x="1870.4000000000001" y="446.17691154422795"/>
         </scene>
-        <!--Following Controller-->
+        <!--Following-->
         <scene sceneID="VKa-b3-7tQ">
             <objects>
-                <tableViewController storyboardIdentifier="FollowingController" id="aqP-nY-Xtj" customClass="FollowingController" customModule="PhotoFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FollowingController" title="Following" id="aqP-nY-Xtj" customClass="FollowingController" customModule="PhotoFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dND-e3-1xS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -550,10 +550,10 @@
             </objects>
             <point key="canvasLocation" x="3425" y="958"/>
         </scene>
-        <!--Follower Controller-->
+        <!--Follower-->
         <scene sceneID="8Db-xt-NJQ">
             <objects>
-                <tableViewController storyboardIdentifier="FollowerController" id="Uft-GF-ueH" customClass="FollowerController" customModule="PhotoFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FollowerController" title="Follower" id="Uft-GF-ueH" customClass="FollowerController" customModule="PhotoFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wWm-EV-J9P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
