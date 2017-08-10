@@ -11,6 +11,13 @@ class FeedController: TableController<Media, MediaCell>, MediaCellDelegate {
     label.textColor = .black
     label.font = UIFont(name: "Noteworthy-Bold", size: 25)
     navigationItem.titleView = label
+
+    // Navigation items
+    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "send"),
+                                                        style: .done, target: nil, action: nil)
+
+    navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "camera"),
+                                                        style: .done, target: nil, action: nil)
   }
 
   override func loadData() {
