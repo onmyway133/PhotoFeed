@@ -39,6 +39,7 @@ class UserController: CollectionController<Media, ImageCell>, UICollectionViewDe
     APIClient.shared.loadInfo(userId: userId) { [weak self] (user) in
       self?.userView.configure(with: user)
       self?.title = user.username
+      self?.parent?.title = user.username
     }
   }
 
