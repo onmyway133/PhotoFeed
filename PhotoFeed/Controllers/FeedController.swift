@@ -21,6 +21,7 @@
  */
 
 import UIKit
+import Compass
 
 class FeedController: TableController<Media, MediaCell>, MediaCellDelegate {
 
@@ -57,20 +58,14 @@ class FeedController: TableController<Media, MediaCell>, MediaCellDelegate {
   // MARK: - MediaCellDelegate
 
   func mediaCell(_ cell: MediaCell, didViewLikes mediaId: String) {
-    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LikesController") as! LikesController
-    controller.mediaId = mediaId
-    navigationController?.pushViewController(controller, animated: true)
+    Navigator.navigate(to: "likes:\(mediaId)")
   }
 
   func mediaCell(_ cell: MediaCell, didViewComments mediaId: String) {
-    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CommentsController") as! CommentsController
-    controller.mediaId = mediaId
-    navigationController?.pushViewController(controller, animated: true)
+    Navigator.navigate(to: "comments:\(mediaId)")
   }
 
   func mediaCell(_ cell: MediaCell, didSelectUserName userId: String) {
-    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserController") as! UserController
-    controller.userId = userId
-    navigationController?.pushViewController(controller, animated: true)
+    Navigator.navigate(to: "user:\(userId)")
   }
 }

@@ -22,6 +22,7 @@
 
 import UIKit
 import Anchors
+import Compass
 
 class UserController: CollectionController<Media, ImageCell>, UICollectionViewDelegateFlowLayout, UserViewDelegate {
 
@@ -79,14 +80,10 @@ class UserController: CollectionController<Media, ImageCell>, UICollectionViewDe
   // MARK: - UserViewDelegate
 
   func userView(_ view: UserView, didViewFollower userId: String) {
-    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FollowerController") as! FollowerController
-    controller.userId = userId
-    navigationController?.pushViewController(controller, animated: true)
+    Navigator.navigate(to: "follower:\(userId)")
   }
 
   func userView(_ view: UserView, didViewFollowing userId: String) {
-    let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FollowingController") as! FollowingController
-    controller.userId = userId
-    navigationController?.pushViewController(controller, animated: true)
+    Navigator.navigate(to: "following:\(userId)")
   }
 }

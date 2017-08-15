@@ -21,6 +21,7 @@
  */
 
 import UIKit
+import Compass
 
 class MenuController: UITableViewController {
   enum Section: Int {
@@ -32,12 +33,7 @@ class MenuController: UITableViewController {
     tableView.deselectRow(at: indexPath, animated: true)
 
     if indexPath.section == Section.account.rawValue, indexPath.row == 0 {
-      logout()
+      Navigator.navigate(to: "logout")
     }
-  }
-
-  func logout() {
-    APIClient.shared.accessToken = nil
-    (UIApplication.shared.delegate as! AppDelegate).showLogin()
   }
 }

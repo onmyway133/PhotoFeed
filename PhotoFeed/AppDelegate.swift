@@ -21,6 +21,7 @@
  */
 
 import UIKit
+import Compass
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, LoginControllerDelegate {
@@ -28,6 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginControllerDelegate {
   var window: UIWindow?
   var loginController: LoginController?
   var mainController: MainController?
+
+  // This Router is for post login
+  var postLoginRouter = Router()
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow(frame: UIScreen.main.bounds)
@@ -75,11 +79,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginControllerDelegate {
 
 extension AppDelegate {
   func setupRouting() {
+    // Register scheme
+    Navigator.scheme = "photofeed"
 
+    // Configure routes for Router
+    postLoginRouter.routes = [
+      "user:{userId}": UserRoute(),
+      "comments:{mediaId}": CommentsRoute(),
+      "likes:{mediaId}": LikesRoute(),
+      "following:{userId}": FollowingRoute(),
+      "follower:{userId}": FollowerRoute(),
+      "logout": LogoutRoute()
+    ]
+
+    // Register routes you 'd like to support
+    Navigator.routes = Array(postLoginRouter.routes.keys)
   }
 
   func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    guard let selectedController = mainController?.selectedViewController else {
+      return false
+    }
+
+    // Construct location
+    guard let location = Navigator.parse(url: url) else {
+      return false
+    }
+
+    // Choose the current visible controller
+    let currentController = (selectedController as? UINavigationController)?.topViewController
+      ?? selectedController
+
+    // Navigate
+    postLoginRouter.navigate(to: location, from: currentController)
+
     return true
   }
 }
-
