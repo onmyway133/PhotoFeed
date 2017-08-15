@@ -31,7 +31,6 @@
 		D2CDE3E81F38366400B86B9A /* CommentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CDE3E71F38366400B86B9A /* CommentsController.swift */; };
 		D2CDE3EA1F38395200B86B9A /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CDE3E91F38395200B86B9A /* TableController.swift */; };
 		D2EC12C51F437F2F00709412 /* Routers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EC12C41F437F2F00709412 /* Routers.swift */; };
-		D2EC12C71F437F5E00709412 /* AppDelegate+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EC12C61F437F5E00709412 /* AppDelegate+Routing.swift */; };
 		D2EC917D1F39849B008D09B4 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EC917C1F39849B008D09B4 /* UserController.swift */; };
 		D2F124071F3A547A00E82339 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F124061F3A547A00E82339 /* ImageCell.swift */; };
 		D2F124091F3A568C00E82339 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F124081F3A568C00E82339 /* UserView.swift */; };
@@ -68,7 +67,6 @@
 		D2CDE3E71F38366400B86B9A /* CommentsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsController.swift; sourceTree = "<group>"; };
 		D2CDE3E91F38395200B86B9A /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
 		D2EC12C41F437F2F00709412 /* Routers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routers.swift; sourceTree = "<group>"; };
-		D2EC12C61F437F5E00709412 /* AppDelegate+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Routing.swift"; sourceTree = "<group>"; };
 		D2EC917C1F39849B008D09B4 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		D2F124061F3A547A00E82339 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		D2F124081F3A568C00E82339 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				D2EC12C41F437F2F00709412 /* Routers.swift */,
-				D2EC12C61F437F5E00709412 /* AppDelegate+Routing.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -279,9 +276,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PhotoFeed/Pods-PhotoFeed-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Anchors/Anchors.framework",
+				"${BUILT_PRODUCTS_DIR}/Compass/Compass.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Pastel/Pastel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anchors.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Compass.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pastel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -294,13 +302,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoFeed-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B5D89D1B29B6129E21DA9882 /* [CP] Copy Pods Resources */ = {
@@ -344,7 +355,6 @@
 				D2CDE3DA1F371C6E00B86B9A /* Image.swift in Sources */,
 				D2F124071F3A547A00E82339 /* ImageCell.swift in Sources */,
 				D2A885A81F35CBB00058171A /* AppDelegate.swift in Sources */,
-				D2EC12C71F437F5E00709412 /* AppDelegate+Routing.swift in Sources */,
 				D2CDE3DE1F3751E700B86B9A /* Extensions.swift in Sources */,
 				D234A1B81F3902D800E39FD1 /* Comment.swift in Sources */,
 				D27FC11C1F37069E0043D2AF /* Media.swift in Sources */,

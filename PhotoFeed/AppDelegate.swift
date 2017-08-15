@@ -73,3 +73,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginControllerDelegate {
   }
 }
 
+extension AppDelegate {
+  func setupRouting() {
+
+  }
+
+  func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    return true
+  }
+}
+
