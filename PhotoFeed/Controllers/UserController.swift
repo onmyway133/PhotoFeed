@@ -80,10 +80,10 @@ class UserController: CollectionController<Media, ImageCell>, UICollectionViewDe
   // MARK: - UserViewDelegate
 
   func userView(_ view: UserView, didViewFollower userId: String) {
-    Navigator.navigate(to: "follower:\(userId)")
+    try? Navigator.navigate(urn: "follower:\(userId)")
   }
 
   func userView(_ view: UserView, didViewFollowing userId: String) {
-    Navigator.navigate(to: "following:\(userId)")
+    try? Navigator.navigate(urn: "following:\(userId)")
   }
 }

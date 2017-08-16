@@ -33,7 +33,7 @@ class MenuController: UITableViewController {
     tableView.deselectRow(at: indexPath, animated: true)
 
     if indexPath.section == Section.account.rawValue, indexPath.row == 0 {
-      Navigator.navigate(to: "logout")
+      try? Navigator.navigate(urn: "logout")
     }
   }
 }

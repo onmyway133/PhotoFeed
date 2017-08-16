@@ -58,14 +58,14 @@ class FeedController: TableController<Media, MediaCell>, MediaCellDelegate {
   // MARK: - MediaCellDelegate
 
   func mediaCell(_ cell: MediaCell, didViewLikes mediaId: String) {
-    Navigator.navigate(to: "likes:\(mediaId)")
+    try? Navigator.navigate(urn: "likes:\(mediaId)")
   }
 
   func mediaCell(_ cell: MediaCell, didViewComments mediaId: String) {
-    Navigator.navigate(to: "comments:\(mediaId)")
+    try? Navigator.navigate(urn: "comments:\(mediaId)")
   }
 
   func mediaCell(_ cell: MediaCell, didSelectUserName userId: String) {
-    Navigator.navigate(to: "user:\(userId)")
+    try? Navigator.navigate(urn: "user:\(userId)")
   }
 }
