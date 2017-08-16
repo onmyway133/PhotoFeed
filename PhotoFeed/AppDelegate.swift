@@ -94,25 +94,23 @@ extension AppDelegate {
 
     // Register routes you 'd like to support
     Navigator.routes = Array(postLoginRouter.routes.keys)
+
+    Navigator.handle = { [weak self] location in
+      guard let selectedController = self?.mainController?.selectedViewController else {
+        return
+      }
+
+      // Choose the current visible controller
+      let currentController = (selectedController as? UINavigationController)?.topViewController
+        ?? selectedController
+
+      // Navigate
+      self?.postLoginRouter.navigate(to: location, from: currentController)
+    }
   }
 
   func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-    guard let selectedController = mainController?.selectedViewController else {
-      return false
-    }
-
-    // Construct location
-    guard let location = Navigator.parse(url: url) else {
-      return false
-    }
-
-    // Choose the current visible controller
-    let currentController = (selectedController as? UINavigationController)?.topViewController
-      ?? selectedController
-
-    // Navigate
-    postLoginRouter.navigate(to: location, from: currentController)
-
+    try? Navigator.navigate(url: url)
     return true
   }
 }
