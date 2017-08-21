@@ -24,7 +24,6 @@
 		D2A885CC1F35CC5B0058171A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A885CB1F35CC5B0058171A /* APIClient.swift */; };
 		D2CDE3DA1F371C6E00B86B9A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CDE3D91F371C6E00B86B9A /* Image.swift */; };
 		D2CDE3DC1F371CAE00B86B9A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CDE3DB1F371CAE00B86B9A /* User.swift */; };
-		D2CDE3DE1F3751E700B86B9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CDE3DD1F3751E700B86B9A /* Extensions.swift */; };
 		D2CDE3E01F37563C00B86B9A /* DataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CDE3DF1F37563C00B86B9A /* DataHolder.swift */; };
 		D2CDE3E41F38363400B86B9A /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CDE3E31F38363400B86B9A /* UserCell.swift */; };
 		D2CDE3E61F38363A00B86B9A /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CDE3E51F38363A00B86B9A /* CommentCell.swift */; };
@@ -60,7 +59,6 @@
 		D2A885CB1F35CC5B0058171A /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D2CDE3D91F371C6E00B86B9A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		D2CDE3DB1F371CAE00B86B9A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D2CDE3DD1F3751E700B86B9A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D2CDE3DF1F37563C00B86B9A /* DataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHolder.swift; sourceTree = "<group>"; };
 		D2CDE3E31F38363400B86B9A /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		D2CDE3E51F38363A00B86B9A /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				D2A885CB1F35CC5B0058171A /* APIClient.swift */,
-				D2CDE3DD1F3751E700B86B9A /* Extensions.swift */,
 				D2CDE3E91F38395200B86B9A /* TableController.swift */,
 				D2F1240A1F3A56E100E82339 /* CollectionController.swift */,
 			);
@@ -235,6 +232,7 @@
 				TargetAttributes = {
 					D2A885A31F35CBB00058171A = {
 						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -355,7 +353,6 @@
 				D2CDE3DA1F371C6E00B86B9A /* Image.swift in Sources */,
 				D2F124071F3A547A00E82339 /* ImageCell.swift in Sources */,
 				D2A885A81F35CBB00058171A /* AppDelegate.swift in Sources */,
-				D2CDE3DE1F3751E700B86B9A /* Extensions.swift in Sources */,
 				D234A1B81F3902D800E39FD1 /* Comment.swift in Sources */,
 				D27FC11C1F37069E0043D2AF /* Media.swift in Sources */,
 				D2A885C71F35CC0F0058171A /* MenuController.swift in Sources */,
@@ -499,11 +496,13 @@
 			baseConfigurationReference = 403ABA58D3FA7A737F8B60CF /* Pods-PhotoFeed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = T78DK947F2;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PhotoFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.PhotoFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -514,11 +513,13 @@
 			baseConfigurationReference = 5FA29E7D04E45BDA6B141739 /* Pods-PhotoFeed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = T78DK947F2;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PhotoFeed/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.PhotoFeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
