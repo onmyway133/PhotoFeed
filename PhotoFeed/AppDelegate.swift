@@ -121,4 +121,38 @@ extension AppDelegate {
     try? Navigator.navigate(url: url)
     return true
   }
+
+  func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    // Parse to token string
+    let token = deviceToken.map {
+      return String(format: "%02.2hhx", $0)
+    }.joined()
+
+    // Log it
+    print("Your device token is \(token)")
+  }
+
+  func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    // Always call the completion handler
+    defer {
+      completionHandler(.newData)
+    }
+
+    // Convert into json dictionary
+    guard let json = userInfo as? [String: Any] else {
+      return
+    }
+
+    // Parse to aps
+    guard let aps = json["aps"] as? [String: Any] else {
+      return
+    }
+
+    // Parse to urn
+    guard let urn = aps["urn"] as? String else {
+      return
+    }
+
+    try? Navigator.navigate(urn: urn)
+  }
 }
