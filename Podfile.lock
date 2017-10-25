@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.5.0)
+  - Alamofire (4.5.1)
   - Anchors (1.2.0)
   - Kingfisher (3.10.4)
   - Pastel (0.3.0)
@@ -26,7 +26,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/onevcat/Kingfisher
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Anchors: c853b894099f52ff17ab1ed5eadde8cd6e72ae05
   Kingfisher: dbfac2b5dec4a531822e0ba8b571ce6010616075
   Pastel: 738740c84f2b15bbcd96ebe99c4e6c2f5dd42262
