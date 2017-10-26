@@ -233,6 +233,11 @@
 					D2A885A31F35CBB00058171A = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
