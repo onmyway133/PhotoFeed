@@ -8,7 +8,7 @@ class APIClient {
   static let shared = APIClient()
 
   private let clientId = "756f0b424b7f48e38c18c1200ad66752"
-  private let redirectUri = "http://raywenderlich.com"
+  private let redirectUri = "http://fantageek.com"
 
   var parameters: JSONDictionary {
     guard let accessToken = accessToken else {
